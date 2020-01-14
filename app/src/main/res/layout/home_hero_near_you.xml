@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_hero_of_the_month"
+        android:layout_marginBottom="@dimen/large_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:padding="5dp"
+        android:elevation="8dp"
+        >
+
+        <View
+            android:id="@+id/mars_hero_near_you_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/mars_hero_near_you_lastname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_hero_near_you_view"
+            app:layout_constraintEnd_toEndOf="@+id/mars_hero_near_you_firstname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mars_hero_near_you_firstname"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Johnson" />
+
+        <com.example.marsheroly.common.widgets.CustomProfilePicture
+            android:id="@+id/heroes_near_to_you_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="80dp"
+            android:contentDescription="@string/placeholder_profile_picture"
+            android:scaleType="centerCrop"
+            app:borderTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_hero_near_you_view"
+            app:layout_constraintEnd_toEndOf="@+id/mars_hero_near_you_view"
+            app:layout_constraintStart_toStartOf="@+id/mars_hero_near_you_view"
+            app:layout_constraintTop_toBottomOf="@+id/you_are_a_hero_button"
+            app:layout_constraintVertical_bias="0.06999999"
+            app:pictureSrc="@drawable/ic_no_picture_placeholder" />
+
+        <TextView
+            android:id="@+id/mars_hero_near_you_firstname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heroes_near_to_you_image"
+            tools:text="Brandy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -3,7 +3,7 @@
     <!--Common-->
     <string name="today">Today</string>
     <!--Conneciton error-->
-     <string name="message_no_connection">It seems you are not connected to the Internet. Please check your connection to continue.</string>
+    <string name="message_no_connection">It seems you are not connected to the Internet. Please check your connection to continue.</string>
     <string name="rectangle_curver_view">Rectangle curver view</string>
     <string name="placeholder_profile_picture">Profile picture of the user</string>
     <string name="mars_heroly_of_the_month">Mars Heroly of the month</string>
@@ -11,5 +11,7 @@
     <string name="accept">Accept</string>
     <string name="dismiss">Dismiss</string>
     <string name="call_icon">Call icon</string>
+    <string name="neighborhood_events">Neighborhood events</string>
+    <string name="neighborhood_event_image">Neighborhood event image</string>
 
 </resources>

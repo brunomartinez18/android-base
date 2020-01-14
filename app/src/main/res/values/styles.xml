@@ -11,6 +11,7 @@
     <style name="redButton" parent="Base.TextAppearance.AppCompat.Button" >
         <item name="backgroundTint">@color/error_red</item>
     </style>
+
     <style name="whiteButton" parent="Base.TextAppearance.AppCompat.Button" >
         <item name="backgroundTint">@color/white</item>
     </style>
