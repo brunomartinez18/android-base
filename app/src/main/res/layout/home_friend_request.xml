@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userName"
+            type="String" />
+        <variable
+            name="animalName"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <View
+            android:id="@+id/mars_heroly_of_the_month"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:background="@drawable/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/accept_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buttons_accept"
+            android:padding="10dp"
+            android:text="@string/accept"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            style="@style/redButton"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintEnd_toEndOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintStart_toEndOf="@+id/dismiss_button" />
+
+        <Button
+            android:id="@+id/dismiss_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buttons_accept_stroke"
+            android:padding="10dp"
+            android:text="@string/dismiss"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintEnd_toStartOf="@+id/accept_button"
+            app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month" />
+
+
+        <com.example.marsheroly.common.widgets.CustomProfilePicture
+            android:id="@+id/home_profile_picture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/placeholder_profile_picture"
+            android:scaleType="centerCrop"
+            app:borderTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/dismiss_button"
+            app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintTop_toTopOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintVertical_bias="0.07999998"
+            app:pictureSrc="@drawable/ic_no_picture_placeholder" />
+
+        <TextView
+            android:id="@+id/hero_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/need_hero_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/home_profile_picture"
+            app:layout_constraintTop_toTopOf="@+id/home_profile_picture"
+            tools:text="Mike Sanders" />
+
+        <TextView
+            android:id="@+id/need_hero_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintStart_toEndOf="@+id/home_profile_picture"
+            app:layout_constraintTop_toBottomOf="@+id/hero_name_text_view"
+            tools:text="Wants to add you as a Hero" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

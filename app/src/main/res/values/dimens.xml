@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--General-->
+    <dimen name="screen_horizontal_margin">20dp</dimen>
+
+    <!--Toast-->
+    <dimen name="toast_corner_radius">6dp</dimen>
+
+    <!--Fab - add-->
+    <dimen name="message_padding">20dp</dimen>
+
+    <!--Edit text custom-->
+    <dimen name="edit_text_radius">6dp</dimen>
+    <dimen name="edit_text_border_width">1dp</dimen>
+
+    <!--Base margins-->
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="large_margin">24dp</dimen>
+</resources>

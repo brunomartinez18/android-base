@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="userName"-->
+<!--            type="String" />-->
+<!--    </data>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/transparent_white">
+
+        <View
+            android:id="@+id/mars_heroly_of_the_month"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/large_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/large_margin"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:background="@drawable/background_hero_of_the_month"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mars_heroly_of_the_month_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/mars_heroly_of_the_month"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mars_heroly_of_the_month_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:lines="2"
+            tools:text="Bruno Martinez"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintTop_toBottomOf="@+id/mars_heroly_of_the_month_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Mars Heroly of the month logo"
+            android:src="@drawable/ic_mars_sketch"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_heroly_of_the_month_name"
+            app:layout_constraintEnd_toEndOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

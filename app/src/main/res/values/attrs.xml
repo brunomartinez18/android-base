@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="toolbarTitleColor" format="color" />
+        <attr name="toolbarShowBackArrow" format="boolean" />
+        <attr name="toolbarBackArrowDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MarsHerolyEditText">
+        <attr name="backgroundDrawable" format="reference" />
+        <attr name="backgroundErrorDrawable" format="reference" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="errorTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WheelPickerView">
+        <attr name="wpvInfinite" format="boolean" />
+        <attr name="wpvTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DateTimePickerView">
+        <attr name="dtpvTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DatePickerView">
+        <attr name="dpvTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomProfilePicture">
+        <attr name="pictureSrc" format="reference" />
+        <attr name="showBorder" format="boolean" />
+        <attr name="borderTint" format="color" />
+    </declare-styleable>
+
+
+</resources>
