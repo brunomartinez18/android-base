@@ -24,7 +24,7 @@ class ToastUtils {
                 toast.cancel()
             }
             toast.setGravity(Gravity.TOP or Gravity.FILL_HORIZONTAL, 0, 25)
-            toast.duration = Toast.LENGTH_SHORT
+            toast.duration = Toast.LENGTH_LONG
             toast.view = toastView
             toast.show()
         }

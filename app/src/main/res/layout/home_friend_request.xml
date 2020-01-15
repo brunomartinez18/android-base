@@ -12,7 +12,7 @@
             android:layout_height="150dp"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginEnd="@dimen/small_margin"
-            android:background="@drawable/background_hero_of_the_month"
+            android:background="@drawable/background_hero_of_the_month_white"
             android:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

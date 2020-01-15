@@ -3,18 +3,20 @@ package com.example.marsheroly.presentation.home.Adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marsheroly.R
+import com.example.marsheroly.R.color.white
 import com.example.marsheroly.common.extensions.loadRoundedPicture
 import com.gery.mobile.data.entities.cards.medication.NeighborhoodEvent
+import kotlinx.android.synthetic.main.home_fragment.view.*
 import kotlinx.android.synthetic.main.home_neighborhood_events_cell.view.*
 
 class NeighborhoodEventsAdapter() : ListAdapter<NeighborhoodEvent, NeighborhoodEventsAdapter.NeighborhoodViewHolder>(
     DIFF_CALLBACK
 ) {
-
 
     companion object {
 
@@ -48,7 +50,6 @@ class NeighborhoodEventsAdapter() : ListAdapter<NeighborhoodEvent, NeighborhoodE
             holder.bind(it)
         }
     }
-
 
     inner class NeighborhoodViewHolder(inflater: LayoutInflater, var parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.home_neighborhood_events_cell, parent, false)) {

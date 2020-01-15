@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="90dp"
         android:layout_height="170dp"
-        android:background="@drawable/background_hero_of_the_month"
+        android:background="@drawable/background_hero_of_the_month_white"
         android:layout_marginBottom="@dimen/large_margin"
         android:layout_marginTop="@dimen/small_margin"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -20,7 +20,7 @@
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/large_margin"
             android:layout_marginBottom="@dimen/large_margin"
-            android:background="@drawable/background_hero_of_the_month"
+            android:background="@drawable/background_hero_of_the_month_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

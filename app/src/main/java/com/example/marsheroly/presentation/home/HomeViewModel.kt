@@ -50,6 +50,10 @@ class HomeViewModel : ViewModel() {
     val error: LiveData<String>
         get() = _error
 
+    private val _neighborhoodEventsTitleToTop = MutableLiveData<Boolean>()
+    val neighborhoodEventsTitleToTop: MutableLiveData<Boolean>
+        get() = _neighborhoodEventsTitleToTop
+
     init {
         val friendRequestOne = FriendRequest(1, 2, "Bruno", false)
         val friendRequestTwo = FriendRequest(2, 3, "Joaquin", false)
@@ -80,8 +84,12 @@ class HomeViewModel : ViewModel() {
     fun dismissFriendRequest(friendRequestIndex: Int) {
         // Make API call then remove it.
         _friendRequestsList.removeAt(friendRequestIndex)
+        _friendRequestsList.value?.let {
+            if (it.isEmpty()){
+                _neighborhoodEventsTitleToTop.value = true
+            }
+        }
     }
-
 
     fun getMarsImages() {
 

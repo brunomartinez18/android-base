@@ -22,6 +22,7 @@ import com.example.marsheroly.R
 import com.example.marsheroly.common.extensions.dpToPx
 import com.example.marsheroly.common.utils.OffsetsItemDecoration
 import com.example.marsheroly.common.utils.StartSnapHelper
+import com.example.marsheroly.common.utils.ToastUtils
 import com.example.marsheroly.presentation.home.Adapter.FriendRequestAdapter
 import com.example.marsheroly.presentation.home.Adapter.HeroesOfTheMonthAdapter
 import com.example.marsheroly.presentation.home.Adapter.HerosNearToYouAdapter
@@ -44,22 +45,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        friendRequestAdapter = FriendRequestAdapter(
-            onAccept = {
-                viewModel.acceptFriendRequest(it)
-                Toast.makeText(context, "Accepted invitation", Toast.LENGTH_SHORT).show()
-            },
-            onDismiss = {
-                viewModel.dismissFriendRequest(it)
-                Toast.makeText(context, "Dismiss invitation", Toast.LENGTH_SHORT).show()
-            }
-        )
-        neighborhoodEventsAdapter = NeighborhoodEventsAdapter()
-        val displayMetrics = DisplayMetrics()
-        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-        val screenWidth = displayMetrics.widthPixels
-        herosNearToYouAdapter = HerosNearToYouAdapter(screenWidth)
-        heroesOfTheMonthAdapter = HeroesOfTheMonthAdapter()
+        initializateAdapters()
     }
 
     override fun onCreateView(
@@ -91,7 +77,11 @@ class HomeFragment : Fragment() {
         })
 
         viewModel.error.observe(this, Observer {
-            // show some kind of error
+            it?.let {
+                ToastUtils.showToastError(it, context!!)
+            }
+
+
         })
 
         viewModel.herosNearToYouList.observe(this, Observer { newHerosNearToYou ->
@@ -102,6 +92,9 @@ class HomeFragment : Fragment() {
             heroesOfTheMonthAdapter.submitList(newHeroesOfTheMonth)
         })
 
+        viewModel.neighborhoodEventsTitleToTop.observe(this, Observer {
+            neighborhood_event.setTextColor(resources.getColor(R.color.white))
+        })
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
 
@@ -119,6 +112,25 @@ class HomeFragment : Fragment() {
         dismiss_invitation_button.setOnClickListener {
             mars_heroly_needed_alert.visibility = View.GONE
         }
+    }
+
+    private fun initializateAdapters() {
+        friendRequestAdapter = FriendRequestAdapter(
+            onAccept = {
+                viewModel.acceptFriendRequest(it)
+                Toast.makeText(context, "Accepted invitation", Toast.LENGTH_SHORT).show()
+            },
+            onDismiss = {
+                viewModel.dismissFriendRequest(it)
+                Toast.makeText(context, "Dismiss invitation", Toast.LENGTH_SHORT).show()
+            }
+        )
+        neighborhoodEventsAdapter = NeighborhoodEventsAdapter()
+        val displayMetrics = DisplayMetrics()
+        activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
+        val screenWidth = displayMetrics.widthPixels
+        herosNearToYouAdapter = HerosNearToYouAdapter(screenWidth)
+        heroesOfTheMonthAdapter = HeroesOfTheMonthAdapter()
     }
 
     private fun setHeroAlert() {
