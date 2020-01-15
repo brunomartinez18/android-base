@@ -1,4 +1,4 @@
-package com.gery.mobile.presentation.dashboard.main.adapters
+package com.example.marsheroly.presentation.home.Adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marsheroly.R
 import com.gery.mobile.data.entities.cards.medication.HeroNearYou
-import kotlinx.android.synthetic.main.home_hero_near_you.view.*
+import kotlinx.android.synthetic.main.home_hero_near_you_cell.view.*
 
-class HerosNearToYouAdapter(val width: Int) : ListAdapter<HeroNearYou, HerosNearToYouAdapter.HeroNearYouViewHolder>(DIFF_CALLBACK) {
+class HerosNearToYouAdapter(val width: Int) : ListAdapter<HeroNearYou, HerosNearToYouAdapter.HeroNearYouViewHolder>(
+    DIFF_CALLBACK
+) {
 
 
     companion object {
@@ -47,10 +49,10 @@ class HerosNearToYouAdapter(val width: Int) : ListAdapter<HeroNearYou, HerosNear
 
 
     inner class HeroNearYouViewHolder(inflater: LayoutInflater, var parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.home_hero_near_you, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.home_hero_near_you_cell, parent, false)) {
 
         init {
-            val cellSize = (width - 64) / 2.5
+            val cellSize = (width - 64) / 2.75
             itemView.layoutParams.width = cellSize.toInt()
         }
 

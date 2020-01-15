@@ -1,4 +1,4 @@
-package com.gery.mobile.presentation.dashboard.main.adapters
+package com.example.marsheroly.presentation.home.Adapter
 
 import android.annotation.SuppressLint
 import android.graphics.Typeface

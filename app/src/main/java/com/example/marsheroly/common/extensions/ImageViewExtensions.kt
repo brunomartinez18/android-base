@@ -35,6 +35,18 @@ fun ImageView.loadRoundedPicture(uri: Uri, placeholder: Int? = null) {
     request.into(this)
 }
 
+fun ImageView.loadRoundedPictureWithPlaceholder(drawablePlaceholder: Int, radius: Int = 0,
+                                                cornerType: RoundedCornersTransformation.CornerType = RoundedCornersTransformation.CornerType.ALL) {
+    val radiusPx = radius.dpToPx()
+    val multi = MultiTransformation<Bitmap>(
+        CenterCrop(), RoundedCornersTransformation(radiusPx, 0, cornerType)
+    )
+    val request = GlideApp.with(context!!)
+        .load(drawablePlaceholder)
+        .apply(RequestOptions.bitmapTransform(multi))
+    request.into(this)
+}
+
 /**
  * Method to load an image with rounded corners.
  * @param url of the image to be loaded

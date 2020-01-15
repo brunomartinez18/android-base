@@ -1,4 +1,4 @@
-package com.gery.mobile.presentation.dashboard.main.adapters
+package com.example.marsheroly.presentation.home.Adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.marsheroly.R
 import com.example.marsheroly.common.extensions.loadRoundedPicture
 import com.gery.mobile.data.entities.cards.medication.NeighborhoodEvent
-import kotlinx.android.synthetic.main.home_neighborhood_events_card.view.*
+import kotlinx.android.synthetic.main.home_neighborhood_events_cell.view.*
 
-class NeighborhoodEventsAdapter() : ListAdapter<NeighborhoodEvent, NeighborhoodEventsAdapter.NeighborhoodViewHolder>(DIFF_CALLBACK) {
+class NeighborhoodEventsAdapter() : ListAdapter<NeighborhoodEvent, NeighborhoodEventsAdapter.NeighborhoodViewHolder>(
+    DIFF_CALLBACK
+) {
 
 
     companion object {
@@ -49,7 +51,7 @@ class NeighborhoodEventsAdapter() : ListAdapter<NeighborhoodEvent, NeighborhoodE
 
 
     inner class NeighborhoodViewHolder(inflater: LayoutInflater, var parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.home_neighborhood_events_card, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.home_neighborhood_events_cell, parent, false)) {
 
 
         @SuppressLint("DefaultLocale")

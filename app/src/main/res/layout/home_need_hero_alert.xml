@@ -99,7 +99,7 @@
                 app:layout_constraintTop_toTopOf="@+id/mars_heroly_of_the_month" />
 
             <com.example.marsheroly.common.widgets.CustomProfilePicture
-                android:id="@+id/home_profile_picture"
+                android:id="@+id/home_need_hero_alert_image_view"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:contentDescription="@string/placeholder_profile_picture"
@@ -127,7 +127,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/mars_heroly_of_the_month"
                 app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month"
-                app:layout_constraintTop_toBottomOf="@+id/home_profile_picture"
+                app:layout_constraintTop_toBottomOf="@+id/home_need_hero_alert_image_view"
                 tools:text="Mike" />
 
             <TextView

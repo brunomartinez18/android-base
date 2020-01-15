@@ -11,6 +11,7 @@ import com.example.marsheroly.data.repositories.MarsRepositoryImpl
 import com.gery.mobile.common.extensions.fetch
 import com.gery.mobile.data.entities.cards.medication.FriendRequest
 import com.gery.mobile.data.entities.cards.medication.HeroNearYou
+import com.gery.mobile.data.entities.cards.medication.HeroeOfTheMonth
 import com.gery.mobile.data.entities.cards.medication.NeighborhoodEvent
 
 class HomeViewModel : ViewModel() {
@@ -37,6 +38,10 @@ class HomeViewModel : ViewModel() {
     val herosNearToYouList: LiveData<List<HeroNearYou>>
         get() = _herosNearToYouList
 
+    private val _heroesOfTheMontList = MutableLiveData<List<HeroeOfTheMonth>>()
+    val heroesOfTheMontList: LiveData<List<HeroeOfTheMonth>>
+        get() = _heroesOfTheMontList
+
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean>
         get() = _loading
@@ -55,9 +60,13 @@ class HomeViewModel : ViewModel() {
         val heroNearYouOne = HeroNearYou(1, "Bruno", "Martinez")
         val heroNearYouTwo = HeroNearYou(2, "Joaquin", "Roldan")
         val heroNearYouThree = HeroNearYou(3, "Very", "very very long lastname")
-        val heroNearYouFour = HeroNearYou(4, "Very very very long name", "Martinez")
+        val heroNearYouFour = HeroNearYou(4, "Very very very very very very long name", "Martinez")
         val heroNearYouFive = HeroNearYou(5, "Pedro", "Os")
         _herosNearToYouList.value = listOf(heroNearYouOne, heroNearYouTwo, heroNearYouThree, heroNearYouFour, heroNearYouFive)
+        val heroeOfTheMonthOne = HeroeOfTheMonth(1, "Bruno", "Martinez", 1500)
+        val heroeOfTheMonthTwo = HeroeOfTheMonth(2, "Joaquin", "Roldan", 300)
+        val heroeOfTheMonthThree = HeroeOfTheMonth(3, "Very long long name", "Last name", 1300000)
+        _heroesOfTheMontList.value = listOf(heroeOfTheMonthOne, heroeOfTheMonthTwo, heroeOfTheMonthThree)
         _loading.value = true
         _error.value = null
         getMarsImages()

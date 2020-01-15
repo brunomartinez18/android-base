@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_hero_of_the_month"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/mars_heroly_of_the_month"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.marsheroly.common.widgets.CustomProfilePicture
+            android:id="@+id/hero_of_the_month_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/round_outline"
+            android:contentDescription="@string/placeholder_profile_picture"
+            android:scaleType="centerCrop"
+            app:borderTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintStart_toStartOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintTop_toTopOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintVertical_bias="0.0"
+            app:pictureSrc="@drawable/ic_base_avatar" />
+
+        <TextView
+            android:id="@+id/hero_of_the_month_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hero_of_the_month_image"
+            app:layout_constraintTop_toTopOf="@+id/hero_of_the_month_image"
+            tools:text="#1 Mike Sanders "
+            tools:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hero_of_the_month_contribution_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/mars_heroly_of_the_month"
+            app:layout_constraintStart_toEndOf="@+id/hero_of_the_month_image"
+            app:layout_constraintTop_toBottomOf="@+id/hero_of_the_month_name"
+            tools:text="Contribution to shelters $15000"
+            tools:textColor="@color/text3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

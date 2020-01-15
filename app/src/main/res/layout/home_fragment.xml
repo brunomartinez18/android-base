@@ -25,7 +25,7 @@
                 android:id="@+id/home_profile_picture"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="@dimen/screen_horizontal_margin"
+                android:layout_marginStart="@dimen/large_margin"
                 android:contentDescription="@string/placeholder_profile_picture"
                 app:borderTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +64,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/dashboard_left_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/large_margin" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/dashboard_right_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/large_margin" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/home_welcome_section"
@@ -74,7 +87,22 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:visibility="visible" />
+                    tools:visibility="visible" >
+
+                    <include
+                        android:id="@+id/home_loader"
+                        layout="@layout/progress_bar_white"
+                        android:layout_width="85dp"
+                        android:layout_height="72dp"
+                        tools:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/home_welcome_section" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -87,21 +115,24 @@
 
                     <include
                         android:id="@+id/mars_heroly_of_the_month_view"
-                        layout="@layout/mars_heroly_of_the_month" />
+                        layout="@layout/mars_heroly_of_the_month"
+                        tools:visibility="visible"
+                        android:visibility="invisible"/>
 
                     <include
                         android:id="@+id/mars_heroly_needed_alert"
-                        layout="@layout/home_need_hero_alert" />
+                        layout="@layout/home_need_hero_alert"
+                        tools:visibility="visible"
+                        android:visibility="invisible"/>
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/home_friends_request_recycler"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/medium_margin"
-                    android:paddingEnd="@dimen/medium_margin"
+                    tools:visibility="visible"
+                    android:visibility="invisible"
+                    style="@style/horizontalSmallPaddingHomeRecyclersViews"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -112,12 +143,14 @@
                     android:id="@+id/neighborhood_event"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/neighborhood_events"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/homeTextViews"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/dashboard_right_guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/dashboard_left_guideline"
                     app:layout_constraintTop_toBottomOf="@+id/home_friends_request_recycler" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -125,10 +158,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/large_margin"
-                    android:paddingEnd="@dimen/medium_margin"
+                    style="@style/horizontalHomeRecyclersViews"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/neighborhood_event" />
@@ -137,12 +167,14 @@
                     android:id="@+id/heroes_near_to_you_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:text="Heros near to you"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/heros_near_to_you"
+                    style="@style/homeTextViews"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/dashboard_right_guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/dashboard_left_guideline"
                     app:layout_constraintTop_toBottomOf="@+id/neighborhood_event_recycler_view" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -150,14 +182,42 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/large_margin"
-                    android:paddingEnd="@dimen/medium_margin"
+                    style="@style/horizontalHomeRecyclersViews"
+                    tools:visibility="visible"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/heroes_near_to_you_title"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/heroes_of_the_month_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:text="@string/heroes_of_the_month"
+                    style="@style/homeTextViews"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/dashboard_right_guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/dashboard_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/heroes_near_to_you_recycler_view" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/heroes_of_the_month_recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    style="@style/verticalHomeRecyclersViews"
+                    tools:visibility="visible"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/heroes_of_the_month_title"
                     app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

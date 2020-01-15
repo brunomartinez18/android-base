@@ -13,5 +13,7 @@
     <string name="call_icon">Call icon</string>
     <string name="neighborhood_events">Neighborhood events</string>
     <string name="neighborhood_event_image">Neighborhood event image</string>
+    <string name="heros_near_to_you">Heros near to you</string>
+    <string name="heroes_of_the_month">Heroes of the month</string>
 
 </resources>

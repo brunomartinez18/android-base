@@ -1,18 +1,28 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="horizontalSmallPaddingHomeRecyclersViews" parent="Widget.AppCompat.ListView">
+        <item name="android:paddingStart">@dimen/medium_margin</item>
+        <item name="android:paddingEnd">@dimen/medium_margin</item>
+        <item name="android:orientation">horizontal</item>
+        <item name ="android:clipToPadding">false</item>
     </style>
 
-    <style name="redButton" parent="Base.TextAppearance.AppCompat.Button" >
-        <item name="backgroundTint">@color/error_red</item>
+    <style name="horizontalHomeRecyclersViews" parent="Widget.AppCompat.ListView">
+        <item name="android:paddingStart">@dimen/large_margin</item>
+        <item name="android:paddingEnd">@dimen/medium_margin</item>
+        <item name="android:orientation">horizontal</item>
+        <item name ="android:clipToPadding">false</item>
     </style>
 
-    <style name="whiteButton" parent="Base.TextAppearance.AppCompat.Button" >
-        <item name="backgroundTint">@color/white</item>
+    <style name="verticalHomeRecyclersViews" parent="Widget.AppCompat.ListView">
+        <item name="android:paddingStart">@dimen/large_margin</item>
+        <item name="android:paddingEnd">@dimen/medium_margin</item>
+        <item name="android:orientation">vertical</item>
+        <item name ="android:clipToPadding">false</item>
+    </style>
+
+    <style name="homeTextViews" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/large_font</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>
